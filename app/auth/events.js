@@ -20,6 +20,7 @@ const onSignIn = function (event) {
     .then(ui.onSignInSuccess)
     .catch(ui.onSignInFailure)
 }
+
 module.exports = {
   onSignUp,
   onSignIn

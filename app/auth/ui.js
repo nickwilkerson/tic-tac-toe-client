@@ -1,4 +1,5 @@
 $('#sign-in-element').hide()
+
 const onSignUpSuccess = function (response) {
   $('#message').text(`Thanks For Signing Up ${response.user.email}!`)
   $('#sign-up').trigger('reset') // clears fields after sign up
@@ -6,7 +7,6 @@ const onSignUpSuccess = function (response) {
   $('#sign-up-element').hide()
 }
 const onSignUpFailure = function () {
-  // $('#sign-in').hide()
   $('#message').text('Failed To Sign Up')
   $('#sign-up').trigger('reset') // clears fields after sign up
 }
@@ -19,9 +19,20 @@ const onSignInFailure = function () {
   $('#message').text('Failed To Sign In')
   $('#sign-in').trigger('reset') // clears fields after sign up
 }
+const alreadyUser = function () {
+  $('#sign-up-element').hide()
+  $('#sign-in-element').show()
+}
+const notUser = function () {
+  $('#sign-in-element').hide()
+  $('#sign-up-element').show()
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
   onSignInSuccess,
-  onSignInFailure
+  onSignInFailure,
+  alreadyUser,
+  notUser
 }
