@@ -20,10 +20,12 @@ const onSignInFailure = function () {
   $('#sign-in').trigger('reset') // clears fields after sign up
 }
 const alreadyUser = function () {
+  $('#message').hide()
   $('#sign-up-element').hide()
   $('#sign-in-element').show()
 }
 const notUser = function () {
+  $('#message').hide()
   $('#sign-in-element').hide()
   $('#sign-up-element').show()
 }
