@@ -29,10 +29,12 @@ const onSignOut = function () {
 const alreadyUser = function () {
   $('#sign-up-element').hide()
   $('#sign-in-element').show()
+  $('#message').text('Glad to see ya again!')
 }
 const notUser = function () {
   $('#sign-in-element').hide()
   $('#sign-up-element').show()
+  $('#message').text('Lets get ya signed up!')
 }
 const newGame = function () {
   $('#game-board').show()

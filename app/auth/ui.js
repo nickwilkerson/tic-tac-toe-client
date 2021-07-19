@@ -11,7 +11,7 @@ const onSignUpFailure = function () {
   $('#sign-up').trigger('reset') // clears fields after sign up
 }
 const onSignInSuccess = function (response) {
-  $('#message').text(`Successfully Signed In ${response.user.email}!`)
+  $('#message').text(`Glad to see ya ${response.user.email}!`)
   store.token = response.user.token
   $('#sign-in').trigger('reset') // clears fields after sign in
   $('#sign-in-element').hide()
@@ -19,7 +19,7 @@ const onSignInSuccess = function (response) {
   $('#new-game').show()
 }
 const onSignInFailure = function () {
-  $('#message').text()
+  $('#message').text('Houston, we have a problem!')
   $('#sign-in').trigger('reset') // clears fields after sign up
 }
 const onSignOutSuccess = function (response) {
