@@ -13,6 +13,8 @@ $(() => {
   $('#sign-out').on('click', authEvents.onSignOut)
   $('#already-user').on('click', authEvents.alreadyUser)
   $('#not-user').on('click', authEvents.notUser)
+  $('#new-game').on('click', authEvents.newGame)
+  $('#new-game').hide()
   $('#sign-in-element').hide()
   $('#game-board').hide()
   $('#sign-out').hide()

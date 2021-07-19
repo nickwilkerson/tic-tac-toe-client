@@ -34,11 +34,16 @@ const notUser = function () {
   $('#sign-in-element').hide()
   $('#sign-up-element').show()
 }
-
+const newGame = function () {
+  $('#game-board').show()
+  $('#message').hide()
+  $('#new-game').hide()
+}
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
   alreadyUser,
-  notUser
+  notUser,
+  newGame
 }

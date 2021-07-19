@@ -15,8 +15,8 @@ const onSignInSuccess = function (response) {
   store.token = response.user.token
   $('#sign-in').trigger('reset') // clears fields after sign in
   $('#sign-in-element').hide()
-  $('#game-board').show()
   $('#sign-out').show()
+  $('#new-game').show()
 }
 const onSignInFailure = function () {
   $('#message').text()
@@ -25,6 +25,9 @@ const onSignInFailure = function () {
 const onSignOutSuccess = function (response) {
   $('#message').text('Successfully Signed Out!')
   $('#game-board').hide()
+  $('#sign-in-element').show()
+  $('#new-game').hide()
+  $('#sign-out').hide()
 }
 const onSignOutFailure = function () {
   $('#message').text('Failed to Sign Out')
