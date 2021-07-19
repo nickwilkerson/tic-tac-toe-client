@@ -1,7 +1,5 @@
 const store = require('./../store')
 
-$('#sign-in-element').hide()
-
 const onSignUpSuccess = function (response) {
   $('#message').text(`Thanks For Signing Up ${response.user.email}!`)
   $('#sign-up').trigger('reset') // clears fields after sign up
