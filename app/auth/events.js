@@ -20,8 +20,18 @@ const onSignIn = function (event) {
     .then(ui.onSignInSuccess)
     .catch(ui.onSignInFailure)
 }
+const alreadyUser = function () {
+  $('#sign-up-element').hide()
+  $('#sign-in-element').show()
+}
+const notUser = function () {
+  $('#sign-in-element').hide()
+  $('#sign-up-element').show()
+}
 
 module.exports = {
   onSignUp,
-  onSignIn
+  onSignIn,
+  alreadyUser,
+  notUser
 }

@@ -20,22 +20,10 @@ const onSignInFailure = function () {
   $('#message').text()
   $('#sign-in').trigger('reset') // clears fields after sign up
 }
-const alreadyUser = function () {
-  // $('#message').trigger('reset')
-  $('#sign-up-element').hide()
-  $('#sign-in-element').show()
-}
-const notUser = function () {
-  // $('#message').trigger('reset')
-  $('#sign-in-element').hide()
-  $('#sign-up-element').show()
-}
 
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
   onSignInSuccess,
-  onSignInFailure,
-  alreadyUser,
-  notUser
+  onSignInFailure
 }

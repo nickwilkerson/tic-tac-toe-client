@@ -1,5 +1,5 @@
 const authEvents = require('./auth/events')
-const ui = require('./auth/ui')
+// const ui = require('./auth/ui')
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
@@ -10,7 +10,7 @@ const ui = require('./auth/ui')
 $(() => {
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
-  $('#already-user').on('click', ui.alreadyUser)
-  $('#not-user').on('click', ui.notUser)
+  $('#already-user').on('click', authEvents.alreadyUser)
+  $('#not-user').on('click', authEvents.notUser)
   $('#game-board').hide()
 })
