@@ -14,18 +14,19 @@ const onSignInSuccess = function (response) {
   $('#message').text(`Successfully Signed In ${response.user.email}!`)
   $('#sign-in').trigger('reset') // clears fields after sign in
   $('#sign-in-element').hide()
+  $('#game-board').show()
 }
 const onSignInFailure = function () {
-  $('#message').text('Failed To Sign In')
+  $('#message').text()
   $('#sign-in').trigger('reset') // clears fields after sign up
 }
 const alreadyUser = function () {
-  $('#message').hide()
+  // $('#message').trigger('reset')
   $('#sign-up-element').hide()
   $('#sign-in-element').show()
 }
 const notUser = function () {
-  $('#message').hide()
+  // $('#message').trigger('reset')
   $('#sign-in-element').hide()
   $('#sign-up-element').show()
 }

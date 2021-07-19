@@ -2,10 +2,100 @@
 
 h1 {
   text-align: center;
+  border: 5px solid black;
   padding: .5em;
-  border: black solid;
+  font-size: 40px;
 }
 
-// #sign-up-header {
-//   text-align: center;
-// }
+#sign-up-element {
+  text-align: center;
+  display: flex;
+  flex-flow: column wrap;
+  border: 5px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  justify-content: center;
+  background-color: lightgrey;
+  margin: auto;
+  margin-top: 10%;
+  width: 400px;
+}
+
+#sign-up {
+  display: flex;
+  flex-flow: column wrap;
+  padding: .5em;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+#sign-up-header {
+  border-bottom: solid black;
+  padding-bottom: 10px;
+}
+
+#already-user {
+  padding: 5px;
+  margin-top: 10px;
+}
+
+#sign-up-button {
+  margin-top: 10px;
+}
+
+//sign-in
+
+#sign-in-element {
+  text-align: center;
+  display: flex;
+  flex-flow: column wrap;
+  border: 5px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  justify-content: center;
+  background-color: lightgrey;
+  margin: auto;
+  margin-top: 10%;
+  width: 400px;
+}
+
+#sign-in {
+  display: flex;
+  flex-flow: column wrap;
+  padding: .5em;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+#sign-in-header {
+  border-bottom: solid black;
+  padding-bottom: 10px;
+}
+
+#not-user {
+  padding: 5px;
+  margin-top: 10px;
+}
+
+#sign-in-button {
+  margin-top: 10px;
+}
+//game board start
+table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+td {
+  width: 200px;
+  height: 200px;
+}
+.vertical {
+  border-right: 5px solid black;
+  border-left: 5px solid black;
+}
+.horizontal {
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
+}
+// game board end

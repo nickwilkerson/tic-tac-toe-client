@@ -1,5 +1,6 @@
 const authEvents = require('./auth/events')
 const ui = require('./auth/ui')
+
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
@@ -11,4 +12,5 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#already-user').on('click', ui.alreadyUser)
   $('#not-user').on('click', ui.notUser)
+  $('#game-board').hide()
 })
