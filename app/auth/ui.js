@@ -1,3 +1,5 @@
+const store = require('./../store')
+
 $('#sign-in-element').hide()
 
 const onSignUpSuccess = function (response) {
@@ -12,18 +14,28 @@ const onSignUpFailure = function () {
 }
 const onSignInSuccess = function (response) {
   $('#message').text(`Successfully Signed In ${response.user.email}!`)
+  store.token = response.user.token
   $('#sign-in').trigger('reset') // clears fields after sign in
   $('#sign-in-element').hide()
   $('#game-board').show()
+  $('#sign-out').show()
 }
 const onSignInFailure = function () {
   $('#message').text()
   $('#sign-in').trigger('reset') // clears fields after sign up
 }
-
+const onSignOutSuccess = function (response) {
+  $('#message').text('Successfully Signed Out!')
+  $('#game-board').hide()
+}
+const onSignOutFailure = function () {
+  $('#message').text('Failed to Sign Out')
+}
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
   onSignInSuccess,
-  onSignInFailure
+  onSignInFailure,
+  onSignOutSuccess,
+  onSignOutFailure
 }

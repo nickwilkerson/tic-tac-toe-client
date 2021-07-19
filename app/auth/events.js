@@ -20,6 +20,12 @@ const onSignIn = function (event) {
     .then(ui.onSignInSuccess)
     .catch(ui.onSignInFailure)
 }
+const onSignOut = function () {
+  api.signOut()
+    .then(ui.onSignOutSuccess)
+    .catch(ui.onSignOutFailure)
+}
+
 const alreadyUser = function () {
   $('#sign-up-element').hide()
   $('#sign-in-element').show()
@@ -32,6 +38,7 @@ const notUser = function () {
 module.exports = {
   onSignUp,
   onSignIn,
+  onSignOut,
   alreadyUser,
   notUser
 }
