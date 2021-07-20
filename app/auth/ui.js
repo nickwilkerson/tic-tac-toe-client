@@ -34,10 +34,9 @@ const onSignOutFailure = function () {
 }
 
 const onCreateGameSuccess = function (response) {
-  console.log('you successfully created a game')
   $('#message').text('Successfully Created Game')
   store.game = response.game
-  console.log('seeing if this works: ', store.game)
+  console.log('new game created: ', store.game)
 }
 const onCreateGameFailure = function () {
   $('#message').text('Failed')

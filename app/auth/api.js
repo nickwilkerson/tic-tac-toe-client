@@ -27,7 +27,6 @@ const signOut = function () {
   })
 }
 const createGame = function () {
-  console.log('New Game: ', store.token)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/games',
