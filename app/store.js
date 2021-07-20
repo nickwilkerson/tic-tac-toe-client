@@ -1,4 +1,8 @@
 const store = {
 }
+// const gameToken = {}
 
-module.exports = store
+module.exports = {
+  store
+  // gameToken
+}

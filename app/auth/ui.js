@@ -32,11 +32,22 @@ const onSignOutSuccess = function (response) {
 const onSignOutFailure = function () {
   $('#message').text('Failed to Sign Out')
 }
+
+const onCreateGameSuccess = function (response) {
+  console.log('you successfully created a game')
+  $('#message').text('Successfully Created Game')
+}
+const onCreateGameFailure = function () {
+  $('#message').text('Failed')
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
   onSignInSuccess,
   onSignInFailure,
   onSignOutSuccess,
-  onSignOutFailure
+  onSignOutFailure,
+  onCreateGameSuccess,
+  onCreateGameFailure
 }

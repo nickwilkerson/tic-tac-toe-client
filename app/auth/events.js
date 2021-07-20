@@ -36,16 +36,20 @@ const notUser = function () {
   $('#sign-up-element').show()
   $('#message').text('Lets get ya signed up!')
 }
-const newGame = function () {
+const onCreateGame = function () {
   $('#game-board').show()
   $('#message').hide()
   $('#new-game').hide()
+  api.createGame()
+    .then(ui.onCreateGameSuccess)
+    .catch(ui.onCreateGameFailure)
 }
+
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
   alreadyUser,
   notUser,
-  newGame
+  onCreateGame
 }

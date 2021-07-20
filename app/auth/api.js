@@ -17,10 +17,20 @@ const signIn = function (data) {
   })
 }
 const signOut = function () {
-  console.log(store.token)
+  // console.log(store.token)
   return $.ajax({
     url: config.apiUrl + '/sign-out',
     method: 'DELETE',
+    headers: {
+      Authorization: 'Bearer ' + store.token
+    }
+  })
+}
+const createGame = function () {
+  console.log('New Game: ', store.token)
+  return $.ajax({
+    method: 'POST',
+    url: config.apiUrl + '/games',
     headers: {
       Authorization: 'Bearer ' + store.token
     }
@@ -30,5 +40,6 @@ const signOut = function () {
 module.exports = {
   signUp,
   signIn,
-  signOut
+  signOut,
+  createGame
 }
