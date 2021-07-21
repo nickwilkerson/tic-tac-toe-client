@@ -35,10 +35,23 @@ const createGame = function () {
     }
   })
 }
+const updateGame = function (event) {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.game._id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Bearer ' + store.token
+    },
+    data: {
+      game
+    }
+  })
+}
 
 module.exports = {
   signUp,
   signIn,
   signOut,
-  createGame
+  createGame,
+  updateGame
 }

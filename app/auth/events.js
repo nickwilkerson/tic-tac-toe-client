@@ -38,11 +38,28 @@ const notUser = function () {
 }
 const onCreateGame = function () {
   $('#game-board').show()
-  $('#message').hide()
   $('#new-game').hide()
   api.createGame()
     .then(ui.onCreateGameSuccess)
     .catch(ui.onCreateGameFailure)
+}
+const gameMove = function (event) {
+  let currentPlayer
+  // variable to store which cell was clicked on the  game board
+  const cellClicked = event.target
+  console.log('You clicked: ', cellClicked)
+  // variable to get the index number of the space clicked
+  const cellIndex = cellClicked.dataset.cellIndex
+  console.log('cell index is ', cellIndex)
+
+  // check to see if space is empty on click
+
+  // if the space is empty, add a game piece(X, O)
+
+  // api call for update
+  // api.updateGame(event)
+  //   .then(ui.onGameUpdateSuccess)
+  //   .catch(ui.onGameUpdateFailure)
 }
 
 module.exports = {
@@ -51,5 +68,6 @@ module.exports = {
   onSignOut,
   alreadyUser,
   notUser,
-  onCreateGame
+  onCreateGame,
+  gameMove
 }

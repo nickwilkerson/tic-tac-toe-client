@@ -34,12 +34,19 @@ const onSignOutFailure = function () {
 }
 
 const onCreateGameSuccess = function (response) {
-  $('#message').text('Successfully Created Game')
+  $('#message').text("It's X's Turn!")
   store.game = response.game
   console.log('new game created: ', store.game)
 }
 const onCreateGameFailure = function () {
   $('#message').text('Failed')
+}
+
+const onGameUpdateSuccess = function (response) {
+  console.log('successfully updated!')
+}
+const onGameUpdateFailure = function () {
+  console.log('failed to update')
 }
 
 module.exports = {
@@ -50,5 +57,7 @@ module.exports = {
   onSignOutSuccess,
   onSignOutFailure,
   onCreateGameSuccess,
-  onCreateGameFailure
+  onCreateGameFailure,
+  onGameUpdateSuccess,
+  onGameUpdateFailure
 }
