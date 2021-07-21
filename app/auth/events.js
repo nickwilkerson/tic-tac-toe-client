@@ -44,7 +44,8 @@ const onCreateGame = function () {
     .catch(ui.onCreateGameFailure)
 }
 const gameMove = function (event) {
-  let currentPlayer
+  // variable to keep track of who the current player is
+  const player = 'X'
   // variable to store which cell was clicked on the  game board
   const cellClicked = event.target
   console.log('You clicked: ', cellClicked)
@@ -53,13 +54,26 @@ const gameMove = function (event) {
   console.log('cell index is ', cellIndex)
 
   // check to see if space is empty on click
-
+  if (cellClicked !== 'x' && cellClicked !== 'o') {
   // if the space is empty, add a game piece(X, O)
+    $(cellClicked).text(player)
+  }
+
+  // object to pass to the api call in order to place a game piece on the board
+  const gameData = {
+    game: {
+      cell: {
+        index: cellIndex,
+        value: player
+      },
+      over: false
+    }
+  }
 
   // api call for update
-  // api.updateGame(event)
-  //   .then(ui.onGameUpdateSuccess)
-  //   .catch(ui.onGameUpdateFailure)
+  api.updateGame(gameData)
+    .then(ui.onGameUpdateSuccess)
+    .catch(ui.onGameUpdateFailure)
 }
 
 module.exports = {

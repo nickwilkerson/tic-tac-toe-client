@@ -34,7 +34,7 @@ const onSignOutFailure = function () {
 }
 
 const onCreateGameSuccess = function (response) {
-  $('#message').text("It's X's Turn!")
+  // $('#message').text("It's X's Turn!")
   store.game = response.game
   console.log('new game created: ', store.game)
 }
@@ -43,7 +43,8 @@ const onCreateGameFailure = function () {
 }
 
 const onGameUpdateSuccess = function (response) {
-  console.log('successfully updated!')
+  store.game = response.game
+  console.log('successfully updated: ', store.game)
 }
 const onGameUpdateFailure = function () {
   console.log('failed to update')
