@@ -58,7 +58,7 @@ const gameMove = function (event) {
   // if the space is empty, add a game piece(X, O)
     $(cellClicked).text(currentPlayer)
   }
-  currentPlayer = currentPlayer === 'O' ? 'x' : 'O'
+  currentPlayer = currentPlayer === 'o' ? 'x' : 'o'
 
   // object to pass to the api call in order to place a game piece on the board
   const gameData = {

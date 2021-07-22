@@ -4,7 +4,8 @@ h1 {
   text-align: center;
   border: 5px solid black;
   padding: .5em;
-  font-size: 40px;
+  font-size: 70px;
+  background-color:rgb(212, 235, 255)
 }
 
 #sign-up-element {
@@ -103,5 +104,12 @@ td {
 }
 // game board end
 #message {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.even, .odd {
+text-align: center;
+font-size: 50px;
 }
