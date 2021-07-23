@@ -1,4 +1,5 @@
 const store = require('./../store')
+const events = require('./events')
 
 const onSignUpSuccess = function (response) {
   $('#message').text(`Thanks For Signing Up ${response.user.email}!`)

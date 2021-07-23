@@ -39,13 +39,17 @@ const notUser = function () {
 }
 const onCreateGame = function () {
   $('#game-board').show()
-  $('#new-game').hide()
+  $('#new-game').show()
+  $('.even').text('')
+  $('.odd').text('')
+  console.log('game cells: ', store.game)
   api.createGame()
     .then(ui.onCreateGameSuccess)
     .catch(ui.onCreateGameFailure)
 }
 // variable to keep track of who the current player is
 let currentPlayer = 'x'
+
 const gameMove = function (event) {
   event.preventDefault()
   // variable to store which cell was clicked on the  game board
