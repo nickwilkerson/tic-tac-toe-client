@@ -17,7 +17,6 @@ const signIn = function (data) {
   })
 }
 const signOut = function () {
-  // console.log(store.token)
   return $.ajax({
     url: config.apiUrl + '/sign-out',
     method: 'DELETE',

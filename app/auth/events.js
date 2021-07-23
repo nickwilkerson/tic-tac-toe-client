@@ -1,8 +1,7 @@
 const getFormFields = require('./../../lib/get-form-fields') // get FormFields
 const api = require('./api') // access the api
 const ui = require('./ui') // access the ui
-// variable to keep track of who the current player is
-let currentPlayer = 'x'
+const store = require('./../store') // access the store value
 
 const onSignUp = function (event) {
   event.preventDefault() // prevents webpage from refreshing when button is clicked
@@ -45,36 +44,38 @@ const onCreateGame = function () {
     .then(ui.onCreateGameSuccess)
     .catch(ui.onCreateGameFailure)
 }
+// variable to keep track of who the current player is
+let currentPlayer = 'x'
 const gameMove = function (event) {
+  event.preventDefault()
   // variable to store which cell was clicked on the  game board
   const cellClicked = event.target
-  console.log('You clicked: ', cellClicked)
   // variable to get the index number of the space clicked
   const cellIndex = cellClicked.dataset.cellIndex
   console.log('cell index is ', cellIndex)
 
   // check to see if space is empty on click
-  if (cellClicked !== 'x' && cellClicked !== 'o') {
-  // if the space is empty, add a game piece(X, O)
+  if (store.game.cells[cellIndex] === '') {
+    // if the space is empty, add a game piece(X, O)
     $(cellClicked).text(currentPlayer)
-  }
-  currentPlayer = currentPlayer === 'o' ? 'x' : 'o'
-
-  // object to pass to the api call in order to place a game piece on the board
-  const gameData = {
-    game: {
-      cell: {
-        index: cellIndex,
-        value: currentPlayer
-      },
-      over: false
+    // player between x and o on each move
+    currentPlayer = currentPlayer === 'o' ? 'x' : 'o'
+    // object to pass to the api call in order to place a game piece on the board
+    const gameData = {
+      game: {
+        cell: {
+          index: cellIndex,
+          value: currentPlayer
+        },
+        over: false
+      }
     }
+    // api call for update
+    api
+      .updateGame(gameData)
+      .then(ui.onGameUpdateSuccess)
+      .catch(ui.onGameUpdateFailure)
   }
-
-  // api call for update
-  api.updateGame(gameData)
-    .then(ui.onGameUpdateSuccess)
-    .catch(ui.onGameUpdateFailure)
 }
 
 module.exports = {

@@ -44,7 +44,7 @@ const onCreateGameFailure = function () {
 
 const onGameUpdateSuccess = function (response) {
   store.game = response.game
-  console.log('successfully updated: ', store.game)
+  console.log('successfully updated: ', store.game.cells)
 }
 const onGameUpdateFailure = function () {
   console.log('failed to update')
