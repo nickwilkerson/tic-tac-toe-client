@@ -42,6 +42,7 @@ const onCreateGame = function () {
   $('#new-game').show()
   $('.even').text('')
   $('.odd').text('')
+  $('#message').text("It's X's Turn!")
   console.log('game cells: ', store.game)
   api.createGame()
     .then(ui.onCreateGameSuccess)
@@ -54,6 +55,7 @@ const gameMove = function (event) {
   event.preventDefault()
   // variable to store which cell was clicked on the  game board
   const cellClicked = event.target
+
   // variable to get the index number of the space clicked
   const cellIndex = cellClicked.dataset.cellIndex
   console.log('cell index is ', cellIndex)
@@ -63,7 +65,7 @@ const gameMove = function (event) {
     // if the space is empty, add a game piece(X, O)
     $(cellClicked).text(currentPlayer)
     // player between x and o on each move
-    currentPlayer = currentPlayer === 'o' ? 'x' : 'o'
+
     // object to pass to the api call in order to place a game piece on the board
     const gameData = {
       game: {
@@ -74,14 +76,65 @@ const gameMove = function (event) {
         over: false
       }
     }
+
     // api call for update
     api
       .updateGame(gameData)
       .then(ui.onGameUpdateSuccess)
       .catch(ui.onGameUpdateFailure)
+
+    currentPlayer = currentPlayer === 'o' ? 'x' : 'o'
   }
+  checkWin()
 }
 
+const checkWin = function () {
+  // array value
+  const cell = store.game.cells
+  const one = cell[0]
+  const two = cell[1]
+  const three = cell[2]
+  const four = cell[3]
+  const five = cell[4]
+  const six = cell[5]
+  const seven = cell[6]
+  const eight = cell[7]
+  const nine = cell[8]
+
+  if (one === 'x' && two === 'x' && three === 'x') {
+    $('#message').text('CONGRATS, YOU WIN!')
+  } else if (four === 'x' && five === 'x' && six === 'x') {
+    $('#message').text('CONGRATS, YOU WIN!')
+  } else if (seven === 'x' && eight === 'x' && nine === 'x') {
+    $('#message').text('CONGRATS, YOU WIN!')
+  } else if (one === 'x' && four === 'x' && seven === 'x') {
+    $('#message').text('CONGRATS, YOU WIN!')
+  } else if (two === 'x' && five === 'x' && eight === 'x') {
+    $('#message').text('CONGRATS, YOU WIN!')
+  } else if (three === 'x' && six === 'x' && nine === 'x') {
+    $('#message').text('CONGRATS, YOU WIN!')
+  } else if (one === 'x' && five === 'x' && nine === 'x') {
+    $('#message').text('CONGRATS, YOU WIN!')
+  } else if (three === 'x' && five === 'x' && seven === 'x') {
+    $('#message').text('CONGRATS, YOU WIN!')
+  } else if (one === 'o' && two === 'o' && three === 'o') {
+    $('#message').text('CONGRATS, YOU WIN!')
+  } else if (four === 'o' && five === 'o' && six === 'o') {
+    $('#message').text('CONGRATS, YOU WIN!')
+  } else if (seven === 'o' && eight === 'o' && nine === 'o') {
+    $('#message').text('CONGRATS, YOU WIN!')
+  } else if (one === 'o' && four === 'o' && seven === 'o') {
+    $('#message').text('CONGRATS, YOU WIN!')
+  } else if (two === 'o' && five === 'o' && eight === 'o') {
+    $('#message').text('CONGRATS, YOU WIN!')
+  } else if (three === 'o' && six === 'o' && nine === 'o') {
+    $('#message').text('CONGRATS, YOU WIN!')
+  } else if (one === 'o' && five === 'o' && nine === 'o') {
+    $('#message').text('CONGRATS, YOU WIN!')
+  } else if (three === 'o' && five === 'o' && seven === 'o') {
+    $('#message').text('CONGRATS, YOU WIN!')
+  }
+}
 module.exports = {
   onSignUp,
   onSignIn,
