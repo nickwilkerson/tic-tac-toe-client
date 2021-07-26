@@ -45,10 +45,10 @@ const onCreateGame = function () {
   $('#message').text("It's X's Turn!")
   console.log('game cells: ', store.game)
   $('#game-results').text('')
+  currentPlayer = 'x'
   api.createGame()
     .then(ui.onCreateGameSuccess)
     .catch(ui.onCreateGameFailure)
-  over = false
 }
 // variable to keep track of who the current player is
 let currentPlayer = 'x'
@@ -60,13 +60,13 @@ const gameMove = function (event) {
 
   // variable to get the index number of the space clicked
   const cellIndex = cellClicked.dataset.cellIndex
-  console.log('cell index is ', cellIndex)
-
+  // when the game is over, display the winner
+  if (store.game.over) return
   // check to see if space is empty on click
-  if (store.game.cells[cellIndex] === '' && over === false) {
+  if (store.game.cells[cellIndex] === '') {
     // if the space is empty, add a game piece(X, O)
     $(cellClicked).text(currentPlayer)
-
+    store.game.cells[cellIndex] = currentPlayer
     // check to see if there is a winner to update gameData value
     const gameOver = checkWin()
 
@@ -80,28 +80,18 @@ const gameMove = function (event) {
         over: gameOver
       }
     }
-
-    // when the game is over, display the winner
-    if (gameData.game.over === true && winner === 'x' || winner === 'o') {
-      $('#game-results').text(`Congrats ${winner}, you win!`)
-    } else if (gameData.game.over === true && winner === '') {
-      $('#game-results').text('Its a tie!')
-    }
+    console.log('game data ', gameData)
+    // player between x and o on each move
+    currentPlayer = currentPlayer === 'o' ? 'x' : 'o'
+    $('#message').text(`Its ${currentPlayer}'s Turn!`)
 
     // api call for update
     api
       .updateGame(gameData)
       .then(ui.onGameUpdateSuccess)
       .catch(ui.onGameUpdateFailure)
-
-    // player between x and o on each move
-    currentPlayer = currentPlayer === 'o' ? 'x' : 'o'
-    $('#message').text(`Its ${currentPlayer}'s Turn!`)
   }
 }
-
-let winner
-let over
 
 const checkWin = function () {
   // array value
@@ -117,58 +107,59 @@ const checkWin = function () {
   const nine = cell[8]
 
   if (one === 'x' && two === 'x' && three === 'x') {
-    over = true
-    winner = 'x'
+    store.winner = 'x'
+    return true
   } else if (four === 'x' && five === 'x' && six === 'x') {
-    over = true
-    winner = 'x'
+    store.winner = 'x'
+    return true
   } else if (seven === 'x' && eight === 'x' && nine === 'x') {
-    over = true
-    winner = 'x'
+    store.winner = 'x'
+    return true
   } else if (one === 'x' && four === 'x' && seven === 'x') {
-    over = true
-    winner = 'x'
+    store.winner = 'x'
+    return true
   } else if (two === 'x' && five === 'x' && eight === 'x') {
-    over = true
-    winner = 'x'
+    store.winner = 'x'
+    return true
   } else if (three === 'x' && six === 'x' && nine === 'x') {
-    over = true
-    winner = 'x'
+    store.winner = 'x'
+    return true
   } else if (one === 'x' && five === 'x' && nine === 'x') {
-    over = true
-    winner = 'x'
+    store.winner = 'x'
+    return true
   } else if (three === 'x' && five === 'x' && seven === 'x') {
-    over = true
-    winner = 'x'
+    store.winner = 'x'
+    return true
   } else if (one === 'o' && two === 'o' && three === 'o') {
-    over = true
-    winner = 'o'
+    store.winner = 'o'
+    return true
   } else if (four === 'o' && five === 'o' && six === 'o') {
-    over = true
-    winner = 'o'
+    store.winner = 'o'
+    return true
   } else if (seven === 'o' && eight === 'o' && nine === 'o') {
-    over = true
-    winner = 'o'
+    store.winner = 'o'
+    return true
   } else if (one === 'o' && four === 'o' && seven === 'o') {
-    over = true
-    winner = 'o'
+    store.winner = 'o'
+    return true
   } else if (two === 'o' && five === 'o' && eight === 'o') {
-    over = true
-    winner = 'o'
+    store.winner = 'o'
+    return true
   } else if (three === 'o' && six === 'o' && nine === 'o') {
-    over = true
-    winner = 'o'
+    store.winner = 'o'
+    return true
   } else if (one === 'o' && five === 'o' && nine === 'o') {
-    over = true
-    winner = 'o'
+    store.winner = 'o'
+    return true
   } else if (three === 'o' && five === 'o' && seven === 'o') {
-    over = true
-    winner = 'o'
-  } else if (one !== '' && two !== '' && three !== '' && four !== '' && five !== '' && six !== '' && seven !== '' && eight !== '') {
-    over = true
-    winner = ''
+    store.winner = 'o'
+    return true
+  } else if (one !== '' && two !== '' && three !== '' && four !== '' && five !== '' && six !== '' && seven !== '' && eight !== '' && nine !== '') {
+    store.winner = ''
+    console.log('store winner ', store.game.cells)
+    return true
   }
-  return over
+  return false
 }
 module.exports = {
   onSignUp,

@@ -1,5 +1,4 @@
 const store = require('./../store')
-const events = require('./events')
 
 const onSignUpSuccess = function (response) {
   $('#message').text(`Thanks For Signing Up ${response.user.email}!`)
@@ -45,7 +44,13 @@ const onCreateGameFailure = function () {
 
 const onGameUpdateSuccess = function (response) {
   store.game = response.game
-  console.log('successfully updated: ', store.game)
+  if (store.game.over) {
+    if (store.winner === '') {
+      $('#game-results').text('Its a tie!')
+      return
+    }
+    $('#game-results').text(`Congrats ${store.winner}, you win!`)
+  }
 }
 const onGameUpdateFailure = function () {
   console.log('failed to update')
