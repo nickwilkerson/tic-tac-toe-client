@@ -48,6 +48,7 @@ const onCreateGame = function () {
   api.createGame()
     .then(ui.onCreateGameSuccess)
     .catch(ui.onCreateGameFailure)
+  over = false
 }
 // variable to keep track of who the current player is
 let currentPlayer = 'x'
@@ -62,7 +63,7 @@ const gameMove = function (event) {
   console.log('cell index is ', cellIndex)
 
   // check to see if space is empty on click
-  if (store.game.cells[cellIndex] === '') {
+  if (store.game.cells[cellIndex] === '' && over === false) {
     // if the space is empty, add a game piece(X, O)
     $(cellClicked).text(currentPlayer)
 
@@ -165,6 +166,7 @@ const checkWin = function () {
     winner = 'o'
   } else if (one !== '' && two !== '' && three !== '' && four !== '' && five !== '' && six !== '' && seven !== '' && eight !== '') {
     over = true
+    winner = ''
   }
   return over
 }
