@@ -44,6 +44,7 @@ const onCreateGame = function () {
   $('.odd').text('')
   $('#message').text("It's X's Turn!")
   console.log('game cells: ', store.game)
+  $('#game-results').text('')
   api.createGame()
     .then(ui.onCreateGameSuccess)
     .catch(ui.onCreateGameFailure)
@@ -64,7 +65,9 @@ const gameMove = function (event) {
   if (store.game.cells[cellIndex] === '') {
     // if the space is empty, add a game piece(X, O)
     $(cellClicked).text(currentPlayer)
-    // player between x and o on each move
+
+    // check to see if there is a winner to update gameData value
+    const gameOver = checkWin()
 
     // object to pass to the api call in order to place a game piece on the board
     const gameData = {
@@ -73,8 +76,15 @@ const gameMove = function (event) {
           index: cellIndex,
           value: currentPlayer
         },
-        over: false
+        over: gameOver
       }
+    }
+
+    // when the game is over, display the winner
+    if (gameData.game.over === true && winner === 'x' || winner === 'o') {
+      $('#game-results').text(`Congrats ${winner}, you win!`)
+    } else if (gameData.game.over === true && winner === '') {
+      $('#game-results').text('Its a tie!')
     }
 
     // api call for update
@@ -83,10 +93,14 @@ const gameMove = function (event) {
       .then(ui.onGameUpdateSuccess)
       .catch(ui.onGameUpdateFailure)
 
+    // player between x and o on each move
     currentPlayer = currentPlayer === 'o' ? 'x' : 'o'
+    $('#message').text(`Its ${currentPlayer}'s Turn!`)
   }
-  checkWin()
 }
+
+let winner
+let over
 
 const checkWin = function () {
   // array value
@@ -102,38 +116,57 @@ const checkWin = function () {
   const nine = cell[8]
 
   if (one === 'x' && two === 'x' && three === 'x') {
-    $('#message').text('CONGRATS, YOU WIN!')
+    over = true
+    winner = 'x'
   } else if (four === 'x' && five === 'x' && six === 'x') {
-    $('#message').text('CONGRATS, YOU WIN!')
+    over = true
+    winner = 'x'
   } else if (seven === 'x' && eight === 'x' && nine === 'x') {
-    $('#message').text('CONGRATS, YOU WIN!')
+    over = true
+    winner = 'x'
   } else if (one === 'x' && four === 'x' && seven === 'x') {
-    $('#message').text('CONGRATS, YOU WIN!')
+    over = true
+    winner = 'x'
   } else if (two === 'x' && five === 'x' && eight === 'x') {
-    $('#message').text('CONGRATS, YOU WIN!')
+    over = true
+    winner = 'x'
   } else if (three === 'x' && six === 'x' && nine === 'x') {
-    $('#message').text('CONGRATS, YOU WIN!')
+    over = true
+    winner = 'x'
   } else if (one === 'x' && five === 'x' && nine === 'x') {
-    $('#message').text('CONGRATS, YOU WIN!')
+    over = true
+    winner = 'x'
   } else if (three === 'x' && five === 'x' && seven === 'x') {
-    $('#message').text('CONGRATS, YOU WIN!')
+    over = true
+    winner = 'x'
   } else if (one === 'o' && two === 'o' && three === 'o') {
-    $('#message').text('CONGRATS, YOU WIN!')
+    over = true
+    winner = 'o'
   } else if (four === 'o' && five === 'o' && six === 'o') {
-    $('#message').text('CONGRATS, YOU WIN!')
+    over = true
+    winner = 'o'
   } else if (seven === 'o' && eight === 'o' && nine === 'o') {
-    $('#message').text('CONGRATS, YOU WIN!')
+    over = true
+    winner = 'o'
   } else if (one === 'o' && four === 'o' && seven === 'o') {
-    $('#message').text('CONGRATS, YOU WIN!')
+    over = true
+    winner = 'o'
   } else if (two === 'o' && five === 'o' && eight === 'o') {
-    $('#message').text('CONGRATS, YOU WIN!')
+    over = true
+    winner = 'o'
   } else if (three === 'o' && six === 'o' && nine === 'o') {
-    $('#message').text('CONGRATS, YOU WIN!')
+    over = true
+    winner = 'o'
   } else if (one === 'o' && five === 'o' && nine === 'o') {
-    $('#message').text('CONGRATS, YOU WIN!')
+    over = true
+    winner = 'o'
   } else if (three === 'o' && five === 'o' && seven === 'o') {
-    $('#message').text('CONGRATS, YOU WIN!')
+    over = true
+    winner = 'o'
+  } else if (one !== '' && two !== '' && three !== '' && four !== '' && five !== '' && six !== '' && seven !== '' && eight !== '') {
+    over = true
   }
+  return over
 }
 module.exports = {
   onSignUp,
