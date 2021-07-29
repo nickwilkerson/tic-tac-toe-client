@@ -16,12 +16,14 @@ const onSignIn = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
+  $('#new-game').text('Play a Game')
 
   api.signIn(data)
     .then(ui.onSignInSuccess)
     .catch(ui.onSignInFailure)
 }
 const onSignOut = function () {
+  $('#game-results').text('')
   api.signOut()
     .then(ui.onSignOutSuccess)
     .catch(ui.onSignOutFailure)
@@ -39,7 +41,7 @@ const notUser = function () {
 }
 const onCreateGame = function () {
   $('#game-board').show()
-  $('#new-game').show()
+  $('#new-game').hide()
   $('.even').text('')
   $('.odd').text('')
   $('#message').text("It's X's Turn!")
@@ -60,8 +62,10 @@ const gameMove = function (event) {
 
   // variable to get the index number of the space clicked
   const cellIndex = cellClicked.dataset.cellIndex
-  // when the game is over, display the winner
+
+  // when the game is over, end the game
   if (store.game.over) return
+
   // check to see if space is empty on click
   if (store.game.cells[cellIndex] === '') {
     // if the space is empty, add a game piece(X, O)
@@ -84,6 +88,12 @@ const gameMove = function (event) {
     // player between x and o on each move
     currentPlayer = currentPlayer === 'o' ? 'x' : 'o'
     $('#message').text(`Its ${currentPlayer}'s Turn!`)
+
+    if (gameOver) {
+      $('#new-game').show()
+      $('#new-game').text('Play Again?')
+      $('#message').text('Thanks for playing!')
+    }
 
     // api call for update
     api
