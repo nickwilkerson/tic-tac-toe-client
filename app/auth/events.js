@@ -44,7 +44,7 @@ const onCreateGame = function () {
   $('#new-game').hide()
   $('.even').text('')
   $('.odd').text('')
-  $('#message').text("It's X's Turn!")
+  $('#message').text("It's x's Turn!")
   console.log('game cells: ', store.game)
   $('#game-results').text('')
   currentPlayer = 'x'

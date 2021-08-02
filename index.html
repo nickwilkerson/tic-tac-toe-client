@@ -15,19 +15,23 @@
 
       <h1>Tic Tac Toe</h1>
 
+      <p id="message"></p>
+      <h3 id="game-results"></h3>
+
       <!-- Sign Up Start -->
       <div id="sign-up-element">
         <h2 id="sign-up-header">Sign Up</h2>
         <form id="sign-up">
-          <label>Email:</label>
+          <label class="input">Email:</label>
           <input name="credentials[email]" type="email">
-          <label>Password:</label>
+          <label class="input">Password:</label>
           <input name="credentials[password]" type="password">
-          <label>Password Confirmation:</label>
+          <label class="input">Password Confirmation:</label>
           <input name="credentials[password_confirmation]" type="password">
-          <input type="submit" value="Sign Up" id="sign-up-button">
+          <input type="submit" value="Sign Up" id="sign-up-button" class="input">
+
         </form>
-        <button id="already-user" type="button">Already a User?</button>
+        <button id="already-user" class="input" type="button">Already a User?</button>
       </div>
       <!-- Sign Up End -->
 
@@ -35,21 +39,19 @@
       <div id="sign-in-element">
         <h2 id="sign-in-header">Sign In</h2>
         <form id="sign-in">
-          <label>Email:</label>
+          <label class="input">Email:</label>
           <input name="credentials[email]" type="email">
-          <label>Password:</label>
+          <label class="input">Password:</label>
           <input name="credentials[password]" type="password">
-          <input type="submit" value="Sign In" id="sign-in-button">
+          <input type="submit" value="Sign In" id="sign-in-button" class="input">
           </form>
-          <button id="not-user" type="button">Not a User?</button>
+          <button id="not-user" type="button" class="input">Not a User?</button>
       </div>
       <!-- Sign In End -->
+      <div class="wrapper">
       <button id="sign-out" type="button">Sign Out</button>
-      <p id="message"></p>
-      <h3 id="game-results"></h3>
-
       <button id="new-game" type="button">Play a Game</button>
-
+      </div>
       <!-- Start Game Board-->
       <table id="game-board">
         <tr class="game-board">

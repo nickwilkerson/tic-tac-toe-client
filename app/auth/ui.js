@@ -7,7 +7,7 @@ const onSignUpSuccess = function (response) {
   $('#sign-up-element').hide()
 }
 const onSignUpFailure = function () {
-  $('#message').text('Failed To Sign Up')
+  $('#message').text('Houston, we have a problem!')
   $('#sign-up').trigger('reset') // clears fields after sign up
 }
 const onSignInSuccess = function (response) {
@@ -34,7 +34,6 @@ const onSignOutFailure = function () {
 }
 
 const onCreateGameSuccess = function (response) {
-  // $('#message').text("It's X's Turn!")
   store.game = response.game
   console.log('new game created: ', store.game)
 }
@@ -49,7 +48,7 @@ const onGameUpdateSuccess = function (response) {
       $('#game-results').text('Its a tie!')
       return
     }
-    $('#game-results').text(`Congrats ${store.winner}, you win!`)
+    $('#game-results').text(`congrats ${store.winner}, you win!`)
   }
 }
 const onGameUpdateFailure = function () {
