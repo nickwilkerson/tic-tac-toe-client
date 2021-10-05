@@ -3,8 +3,8 @@ const store = require('./../store')
 const onSignUpSuccess = function (response) {
   $('#message').text(`Thanks For Signing Up ${response.user.email}!`)
   $('#sign-up').trigger('reset') // clears fields after sign up
-  $('#sign-in-element').show()
-  $('#sign-up-element').hide()
+  $('#sign-in').show()
+  $('#sign-up').hide()
 }
 const onSignUpFailure = function () {
   $('#message').text('Houston, we have a problem!')
@@ -14,7 +14,7 @@ const onSignInSuccess = function (response) {
   $('#message').text(`Glad to see ya ${response.user.email}!`)
   store.token = response.user.token
   $('#sign-in').trigger('reset') // clears fields after sign in
-  $('#sign-in-element').hide()
+  $('#sign-in').hide()
   $('#sign-out').show()
   $('#new-game').show()
 }
@@ -25,7 +25,7 @@ const onSignInFailure = function () {
 const onSignOutSuccess = function (response) {
   $('#message').text('Successfully Signed Out!')
   $('#game-board').hide()
-  $('#sign-in-element').show()
+  $('#sign-in').show()
   $('#new-game').hide()
   $('#sign-out').hide()
 }

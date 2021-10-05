@@ -30,8 +30,8 @@ const onSignOut = function () {
 }
 
 const alreadyUser = function () {
-  $('#sign-up-element').hide()
-  $('#sign-in-element').show()
+  $('#sign-up').hide()
+  $('#sign-in').show()
   $('#message').text('Glad to see ya again!')
 }
 const notUser = function () {

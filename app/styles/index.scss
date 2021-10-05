@@ -1,76 +1,112 @@
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&family=Ubuntu&display=swap');
 
 body {
-  background-color: black;
-  background-image: url(https://i.pinimg.com/originals/eb/c8/d3/ebc8d3629f46341230ed65f5c2dd3e24.jpg);
-  background-size: cover;
+  background-color: #FFEADB;
+  // background-image: url(https://i.pinimg.com/originals/eb/c8/d3/ebc8d3629f46341230ed65f5c2dd3e24.jpg);
+  // background-size: cover;
 }
 
 h1 {
   text-align: center;
   // border-bottom: 5px solid white;
   padding: .5em;
-  font-size: 50px;
+  font-size: 60px;
   background-color: transparent;
-  color: white;
-  font-family: 'Rock Salt', cursive;
+  color: #679B9B;
+  font-family: 'Ubuntu', sans-serif;
   margin-top: 25px;
 }
 
-.input {
-  display: flex;
-  flex-wrap: wrap;
+h3 {
+  text-align: center;
+  padding: 10px;
+  color: #637373;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 35px;
+}
+
+#sign-up, #sign-in {
+  width: 25%;
+  margin: 100px auto;
+  padding: 25px;
+  border: 2px solid #FF9A76;
+  border-radius: 20px;
+  background-color: #679b9bb9;
+}
+
+.credentials {
   padding: 5px;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 20px;
 }
 
-#sign-up-element {
-  text-align: center;
-  display: flex;
-  flex-flow: column wrap;
-  border: 3px solid rgba(255, 255, 255, 0.242);
-  border-radius: 10px;
-  padding: 5px;
-  justify-content: center;
-  background-color: black;
-  color: white;
+.btn-primary {
+  position: relative;
+  width: 11rem;
   margin: auto;
-  margin-top: 12%;
-  width: 300px;
-}
-
-#sign-up {
-  display: flex;
-  flex-flow: column wrap;
-  padding: 5px;
-  margin: .5em;
-  font-size: 15px;
-  border-radius: 10px;
-  // font-family: 'Rock Salt', cursive;
-}
-
-#sign-up-header {
-  border-bottom: solid white;
-  // padding-bottom: 10px;
-  font-family: 'Rock Salt', cursive;
-  font-size: 25px;
-  padding: 15px;
-}
-
-#sign-up-button {
-  margin-top: 12px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  border: 2px solid gray;
-  background-color: rgb(72, 72, 72);
-  color: white;
+  background-color: #FF9A76;
+  border-color: #FFEADB;
+
 }
+.btn-primary:hover {
+    background-color: #FFEADB;
+    border-color: #FF9A76;
+  }
+// .input {
+//   display: flex;
+//   flex-wrap: wrap;
+//   padding: 5px;
+//   font-family: 'Oswald', sans-serif;
+//   font-size: 20px;
+// }
+
+// #sign-up-element {
+//   text-align: center;
+//   display: flex;
+//   flex-flow: column wrap;
+//   border: 3px solid rgba(255, 255, 255, 0.242);
+//   border-radius: 10px;
+//   padding: 5px;
+//   justify-content: center;
+//   background-color: black;
+//   color: white;
+//   margin: auto;
+//   margin-top: 12%;
+//   width: 300px;
+// }
+
+// #sign-up {
+//   display: flex;
+//   flex-flow: column wrap;
+//   padding: 5px;
+//   margin: .5em;
+//   font-size: 15px;
+//   border-radius: 10px;
+//   // font-family: 'Rock Salt', cursive;
+// }
+
+// #sign-up-header {
+//   border-bottom: solid white;
+//   // padding-bottom: 10px;
+//   font-family: 'Rock Salt', cursive;
+//   font-size: 25px;
+//   padding: 15px;
+// }
+
+// #sign-up-button {
+//   margin-top: 12px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   border: 2px solid gray;
+//   background-color: rgb(72, 72, 72);
+//   color: white;
+// }
 
  #already-user {
   display: flex;
@@ -82,48 +118,48 @@ h1 {
   background-color: rgb(72, 72, 72);
   color: white;
 }
-#sign-in-element {
-  text-align: center;
-  display: flex;
-  flex-flow: column wrap;
-  border: 3px solid rgba(255, 255, 255, 0.242);
-  border-radius: 10px;
-  padding: 5px;
-  justify-content: center;
-  background-color: black;
-  color: white;
-  margin: auto;
-  margin-top: 12%;
-  width: 300px;
-}
+// #sign-in-element {
+//   text-align: center;
+//   display: flex;
+//   flex-flow: column wrap;
+//   border: 3px solid rgba(255, 255, 255, 0.242);
+//   border-radius: 10px;
+//   padding: 5px;
+//   justify-content: center;
+//   background-color: black;
+//   color: white;
+//   margin: auto;
+//   margin-top: 12%;
+//   width: 300px;
+// }
 
-#sign-in {
-  display: flex;
-  flex-flow: column wrap;
-  padding: 5px;
-  margin: .5em;
-  font-size: 15px;
-  border-radius: 10px;
-  // font-family: 'Rock Salt', cursive;
-}
+// #sign-in {
+//   display: flex;
+//   flex-flow: column wrap;
+//   padding: 5px;
+//   margin: .5em;
+//   font-size: 15px;
+//   border-radius: 10px;
+//   // font-family: 'Rock Salt', cursive;
+// }
 
-#sign-in-header {
-  border-bottom: solid white;
-  // padding-bottom: 10px;
-  font-family: 'Rock Salt', cursive;
-  font-size: 25px;
-  padding: 15px;
-}
+// #sign-in-header {
+//   border-bottom: solid white;
+//   // padding-bottom: 10px;
+//   font-family: 'Rock Salt', cursive;
+//   font-size: 25px;
+//   padding: 15px;
+// }
 
-#sign-in-button {
-  margin-top: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid gray;
-  background-color: rgb(72, 72, 72);
-  color: white;
-}
+// #sign-in-button {
+//   margin-top: 12px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   border: 2px solid gray;
+//   background-color: rgb(72, 72, 72);
+//   color: white;
+// }
 
  #not-user {
   display: flex;
@@ -162,16 +198,16 @@ table {
   align-items: center;
   margin-top: 75px;
   margin-bottom: 30px;
-  color: white;
+  color: #FF9A76;
   font-family: 'Rock Salt', cursive;
-
 }
 
 td:empty {
-  background-color: rgba(0, 0, 0, 0.647);
+  background-color: #679B9B;
 }
 td:hover {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: #FF9A76;
+  color: #679B9B;
 }
 
 td {
@@ -184,7 +220,7 @@ td {
   justify-content: center;
   align-content: flex-start;
   flex-wrap: wrap;
-  color: white;
+  color: #679B9B;
   font-family: 'Oswald', sans-serif;
   font-size: 25px;
 }
@@ -192,10 +228,10 @@ td {
 .even, .odd {
 
 text-align: center;
-font-size: 50px;
-border: 5px solid rgb(255, 255, 255);
-background-color: rgba(0, 0, 0, 0.448);
-
+font-size: 6rem;
+background-color: #679B9B;
+border-radius: 25px;
+border: 3px solid #FFEADB;
 }
 
 #game-results {

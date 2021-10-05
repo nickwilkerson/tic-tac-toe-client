@@ -19,7 +19,7 @@
       <h3 id="game-results"></h3>
 
       <!-- Sign Up Start -->
-      <div id="sign-up-element">
+      <!-- <div id="sign-up-element">
         <h2 id="sign-up-header">Sign Up</h2>
         <form id="sign-up">
           <label class="input">Email:</label>
@@ -32,22 +32,44 @@
 
         </form>
         <button id="already-user" class="input" type="button">Already a User?</button>
-      </div>
+      </div> -->
+
+      <form id="sign-up">
+        <h3>Sign Up</h3>
+        <div class="form-group">
+          <label class="credentials">Email</label>
+          <input name="credentials[email]" type="email" class="form-control" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label class="credentials">Password</label>
+          <input name="credentials[password]" type="password" class="form-control" placeholder="Password">
+        </div>
+        <div class="form-group">
+          <label class="credentials">Confirm Password</label>
+          <input name="credentials[password_confirmation]" type="password" class="form-control" placeholder="Confirm Password">
+        </div>
+        <button type="submit" class="btn btn-primary mt-4">Sign Up</button>
+        <button id="#already-user" class="btn btn-primary mt-2">Already Signed Up?</button>
+      </form>
       <!-- Sign Up End -->
 
       <!-- Sign In Start -->
-      <div id="sign-in-element">
-        <h2 id="sign-in-header">Sign In</h2>
-        <form id="sign-in">
-          <label class="input">Email:</label>
-          <input name="credentials[email]" type="email">
-          <label class="input">Password:</label>
-          <input name="credentials[password]" type="password">
-          <input type="submit" value="Sign In" id="sign-in-button" class="input">
-          </form>
-          <button id="not-user" type="button" class="input">Not a User?</button>
-      </div>
+      <form id="sign-in">
+        <h3>Sign In</h3>
+        <div class="form-group">
+          <label class="credentials">Email</label>
+          <input name="credentials[email]" type="email" class="form-control" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label class="credentials">Password</label>
+          <input name="credentials[password]" type="password" class="form-control" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Sign In</button>
+      </form>
+
       <!-- Sign In End -->
+
       <div class="wrapper">
       <button id="sign-out" type="button">Sign Out</button>
       <button id="new-game" type="button">Play a Game</button>
