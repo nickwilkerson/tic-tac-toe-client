@@ -1,0 +1,166 @@
+@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=M+PLUS+Rounded+1c:wght@300&family=Ubuntu&display=swap');
+
+body {
+  background-color: #FFEADB;
+  // background-image: url(https://i.pinimg.com/originals/eb/c8/d3/ebc8d3629f46341230ed65f5c2dd3e24.jpg);
+  // background-size: cover;
+}
+
+h1 {
+  text-align: center;
+  font-size: 80px;
+  background-color: transparent;
+  color: #679B9B;
+  font-family: 'Annie Use Your Telescope', cursive;
+}
+
+.heading {
+  margin-top: 50px;
+}
+
+.container {
+  position: relative;
+  margin: auto;
+  width: 25em;
+  height: 10em;
+  background-color: #679b9bb9;
+  border: 2px solid #FF9A76;
+  border-radius: 20px;
+}
+
+.announcement {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+  font-family: 'Ubuntu', sans-serif;
+  color: #FFEADB;
+}
+
+h3 {
+  text-align: center;
+  padding: 10px;
+  color: #637373;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 35px;
+}
+
+#sign-up, #sign-in {
+  width: 25em;
+  margin: 60px auto;
+  padding: 25px;
+  border: 2px solid #FF9A76;
+  border-radius: 20px;
+  background-color: #679b9bb9;
+  position: relative;
+  overflow: hidden;
+}
+
+.credentials {
+  padding: 5px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+}
+
+.btn-primary {
+  position: relative;
+  width: 175px;
+  height: 40px;
+  padding: 5px;
+  border-radius: 15px;
+  text-align: center;
+  margin: 10px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  background-color: #FF9A76;
+  border-color: #FFEADB;
+}
+.btn-primary:hover {
+    background-color: #FFEADB;
+    border-color: #FF9A76;
+    color: #637373;
+  }
+.btn-primary:focus {
+    background-color: #FF9A76;
+    border-color: #FFEADB;
+    color: #637373;
+    box-shadow: none;
+  }
+
+
+#new-game, #sign-out {
+  background-color: #FF9A76;
+  border-color: #FFEADB;
+  border-radius: 15px;
+  width: 175px;
+  height: 40px;
+  border-radius: 15px;
+  text-align: center;
+  margin-top: 30px;
+  font-family: 'Ubuntu', sans-serif;
+  color: #FFEADB;
+}
+#new-game:hover, #sign-out:hover{
+  background-color: #FFEADB;
+  border-color: #FF9A76;
+  color: #637373;
+}
+#sign-out {
+  float: right;
+}
+
+table {
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35px;
+  margin-bottom: 30px;
+  color: #FF9A76;
+  font-family: 'Rock Salt', cursive;
+}
+
+td:empty {
+  background-color: #679B9B;
+}
+td:hover {
+  background-color: #FF9A76;
+  color: #679B9B;
+  cursor: pointer;
+}
+
+td {
+  width: 150px;
+  height: 150px;
+}
+
+#message {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  color: #679B9B;
+  font-family: 'Oswald', sans-serif;
+  font-size: 25px;
+}
+
+.even, .odd {
+
+text-align: center;
+font-size: 5rem;
+background-color: #679B9B;
+border-radius: 25px;
+border: 3px solid #FFEADB;
+}
+
+// #game-results {
+//   position: relative;
+//   text-align: center;
+//   font-family: 'Oswald', sans-serif;
+//   color: white;
+// }

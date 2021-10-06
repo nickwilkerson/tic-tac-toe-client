@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="https://i.imgur.com/FQ8qe1J.jpg">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+
+      <div class="heading">
+        <h1>Tic Tac Toe</h1>
+        <div class="container">
+          <p class="announcement"></p>
+          <button id="sign-out" type="button">Sign Out</button>
+          <button id="new-game" type="button">Play a Game</button>
+        </div>
+      </div>
+
+      <p id="message"></p>
+      <h3 id="game-results"></h3>
+      <!-- Sign Up Start -->
+      <!-- <div id="sign-up-element">
+        <h2 id="sign-up-header">Sign Up</h2>
+        <form id="sign-up">
+          <label class="input">Email:</label>
+          <input name="credentials[email]" type="email">
+          <label class="input">Password:</label>
+          <input name="credentials[password]" type="password">
+          <label class="input">Password Confirmation:</label>
+          <input name="credentials[password_confirmation]" type="password">
+          <input type="submit" value="Sign Up" id="sign-up-button" class="input">
+
+        </form>
+        <button id="already-user" class="input" type="button">Already a User?</button>
+      </div> -->
+
+      <form id="sign-up">
+        <h3>Sign Up</h3>
+        <div class="form-group">
+          <label class="credentials">Email</label>
+          <input name="credentials[email]" type="email" class="form-control" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label class="credentials">Password</label>
+          <input name="credentials[password]" type="password" class="form-control" placeholder="Password">
+        </div>
+        <div class="form-group">
+          <label class="credentials">Confirm Password</label>
+          <input name="credentials[password_confirmation]" type="password" class="form-control" placeholder="Confirm Password">
+        </div>
+        <button type="submit" class="btn-primary">Sign Up</button>
+        <button id="already-user" type="button" class="btn-primary">Already Signed Up?</button>
+      </form>
+      <!-- Sign Up End -->
+
+      <!-- Sign In Start -->
+      <form id="sign-in">
+        <h3>Sign In</h3>
+        <div class="form-group">
+          <label class="credentials">Email</label>
+          <input name="credentials[email]" type="email" class="form-control" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label class="credentials">Password</label>
+          <input name="credentials[password]" type="password" class="form-control" placeholder="Password">
+        </div>
+        <button type="submit" class="btn-primary">Sign In</button>
+        <button id="not-user" type="button" class="btn-primary">Not Signed Up?</button>
+      </form>
+
+      <!-- Sign In End -->
+
+
+      <!-- Start Game Board-->
+      <table id="game-board">
+        <tr class="game-board">
+          <td class="even" data-cell-index="0"></td>
+          <td class="odd" data-cell-index="1"></td>
+          <td class="even" data-cell-index="2"></td>
+        </tr>
+        <tr class="game-board">
+          <td class="odd" data-cell-index="3"></td>
+          <td class="even" data-cell-index="4"></td>
+          <td class="odd" data-cell-index="5"></td>
+        </tr>
+        <tr class="game-board">
+          <td class="even" data-cell-index="6"></td>
+          <td class="odd" data-cell-index="7"></td>
+          <td class="even" data-cell-index="8"></td>
+        </tr>
+      </table>
+      <!--End Game Board-->
+
+    </body>
+</html>
