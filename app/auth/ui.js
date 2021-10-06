@@ -7,7 +7,7 @@ const onSignUpSuccess = function (response) {
   $('#sign-up').hide()
 }
 const onSignUpFailure = function () {
-  $('#message').text('Houston, we have a problem!')
+  $('#message').text('Houston, we have a problem! That email is already taken or your passwords do not match.')
   $('#sign-up').trigger('reset') // clears fields after sign up
 }
 const onSignInSuccess = function (response) {
@@ -21,7 +21,7 @@ const onSignInSuccess = function (response) {
   $('#new-game').show()
 }
 const onSignInFailure = function () {
-  $('#message').text('Houston, we have a problem!')
+  $('#message').text('Login Failed: Your user email or password is incorrect.')
   $('#sign-in').trigger('reset') // clears fields after sign up
 }
 const onSignOutSuccess = function (response) {

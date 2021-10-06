@@ -165,7 +165,6 @@ const checkWin = function () {
     return true
   } else if (one !== '' && two !== '' && three !== '' && four !== '' && five !== '' && six !== '' && seven !== '' && eight !== '' && nine !== '') {
     store.winner = ''
-    console.log('store winner ', store.game.cells)
     return true
   }
   return false
