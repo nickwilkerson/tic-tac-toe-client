@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=M+PLUS+Rounded+1c:wght@300&family=Ubuntu&display=swap');
 
 body {
   background-color: #FFEADB;
@@ -11,13 +12,32 @@ body {
 
 h1 {
   text-align: center;
-  // border-bottom: 5px solid white;
-  padding: .5em;
-  font-size: 60px;
+  font-size: 80px;
   background-color: transparent;
   color: #679B9B;
+  font-family: 'Annie Use Your Telescope', cursive;
+}
+
+.heading {
+  margin-top: 50px;
+}
+
+.container {
+  position: relative;
+  margin: auto;
+  width: 25em;
+  height: 10em;
+  background-color: #679b9bb9;
+  border: 2px solid #FF9A76;
+  border-radius: 20px;
+}
+
+.announcement {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
   font-family: 'Ubuntu', sans-serif;
-  margin-top: 25px;
+  color: #FFEADB;
 }
 
 h3 {
@@ -29,12 +49,13 @@ h3 {
 }
 
 #sign-up, #sign-in {
-  width: 25%;
-  margin: 100px auto;
+  width: 25em;
+  margin: 75px auto;
   padding: 25px;
   border: 2px solid #FF9A76;
   border-radius: 20px;
   background-color: #679b9bb9;
+
 }
 
 .credentials {
@@ -45,150 +66,45 @@ h3 {
 
 .btn-primary {
   position: relative;
-  width: 11rem;
-  margin: auto;
+  width: 175px;
+  height: 40px;
+  padding: 5px;
+  border-radius: 15px;
+  text-align: center;
+  margin: 10px auto 0 auto;
   display: flex;
   justify-content: center;
+  align-self: center;
   background-color: #FF9A76;
   border-color: #FFEADB;
-
 }
 .btn-primary:hover {
     background-color: #FFEADB;
     border-color: #FF9A76;
+    color: #637373;
   }
-// .input {
-//   display: flex;
-//   flex-wrap: wrap;
-//   padding: 5px;
-//   font-family: 'Oswald', sans-serif;
-//   font-size: 20px;
-// }
 
-// #sign-up-element {
-//   text-align: center;
-//   display: flex;
-//   flex-flow: column wrap;
-//   border: 3px solid rgba(255, 255, 255, 0.242);
-//   border-radius: 10px;
-//   padding: 5px;
-//   justify-content: center;
-//   background-color: black;
-//   color: white;
-//   margin: auto;
-//   margin-top: 12%;
-//   width: 300px;
-// }
 
-// #sign-up {
-//   display: flex;
-//   flex-flow: column wrap;
-//   padding: 5px;
-//   margin: .5em;
-//   font-size: 15px;
-//   border-radius: 10px;
-//   // font-family: 'Rock Salt', cursive;
-// }
 
-// #sign-up-header {
-//   border-bottom: solid white;
-//   // padding-bottom: 10px;
-//   font-family: 'Rock Salt', cursive;
-//   font-size: 25px;
-//   padding: 15px;
-// }
-
-// #sign-up-button {
-//   margin-top: 12px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   border: 2px solid gray;
-//   background-color: rgb(72, 72, 72);
-//   color: white;
-// }
-
- #already-user {
-  display: flex;
-  justify-content: center;
-  width: 91.25%;
-  margin: auto;
-  margin-bottom: 7px;
-  border: 2px solid gray;
-  background-color: rgb(72, 72, 72);
-  color: white;
-}
-// #sign-in-element {
-//   text-align: center;
-//   display: flex;
-//   flex-flow: column wrap;
-//   border: 3px solid rgba(255, 255, 255, 0.242);
-//   border-radius: 10px;
-//   padding: 5px;
-//   justify-content: center;
-//   background-color: black;
-//   color: white;
-//   margin: auto;
-//   margin-top: 12%;
-//   width: 300px;
-// }
-
-// #sign-in {
-//   display: flex;
-//   flex-flow: column wrap;
-//   padding: 5px;
-//   margin: .5em;
-//   font-size: 15px;
-//   border-radius: 10px;
-//   // font-family: 'Rock Salt', cursive;
-// }
-
-// #sign-in-header {
-//   border-bottom: solid white;
-//   // padding-bottom: 10px;
-//   font-family: 'Rock Salt', cursive;
-//   font-size: 25px;
-//   padding: 15px;
-// }
-
-// #sign-in-button {
-//   margin-top: 12px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   border: 2px solid gray;
-//   background-color: rgb(72, 72, 72);
-//   color: white;
-// }
-
- #not-user {
-  display: flex;
-  justify-content: center;
-  width: 91.25%;
-  margin: auto;
-  margin-bottom: 7px;
-  border: 2px solid gray;
-  background-color: rgb(72, 72, 72);
-  color: white;
-}
-.wrapper {
-  display: flex;
-  display: inline block;
-  align-items: flex-start;
-  justify-content: center;
-  margin-top: 20px;
-  width: auto;
-}
 #new-game, #sign-out {
-  border: 2px solid rgb(0, 0, 0);
-  background-color: rgb(72, 72, 72);
-  color: white;
-  padding: 10px;
-  margin: 5px;
-  font-family: 'Oswald', sans-serif;
+  background-color: #FF9A76;
+  border-color: #FFEADB;
+  border-radius: 15px;
+  width: 175px;
+  height: 40px;
+  border-radius: 15px;
+  text-align: center;
+  margin-top: 30px;
+  font-family: 'Ubuntu', sans-serif;
+  color: #FFEADB;
 }
-#new-game:hover, #sign-out:hover, #already-user:hover, #not-user:hover, #sign-in-button:hover, #sign-up-button:hover {
-  background-color: rgba(255, 255, 255, 0.4);
+#new-game:hover, #sign-out:hover{
+  background-color: #FFEADB;
+  border-color: #FF9A76;
+  color: #637373;
+}
+#sign-out {
+  float: right;
 }
 
 table {
@@ -196,7 +112,7 @@ table {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 75px;
+  margin-top: 35px;
   margin-bottom: 30px;
   color: #FF9A76;
   font-family: 'Rock Salt', cursive;
@@ -216,6 +132,7 @@ td {
 }
 
 #message {
+  position: relative;
   display: flex;
   justify-content: center;
   align-content: flex-start;
@@ -228,14 +145,15 @@ td {
 .even, .odd {
 
 text-align: center;
-font-size: 6rem;
+font-size: 5rem;
 background-color: #679B9B;
 border-radius: 25px;
 border: 3px solid #FFEADB;
 }
 
-#game-results {
-  text-align: center;
-  font-family: 'Rock Salt', cursive;
-  color: white;
-}
+// #game-results {
+//   position: relative;
+//   text-align: center;
+//   font-family: 'Oswald', sans-serif;
+//   color: white;
+// }

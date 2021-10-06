@@ -13,11 +13,17 @@
     </head>
     <body>
 
-      <h1>Tic Tac Toe</h1>
+      <div class="heading">
+        <h1>Tic Tac Toe</h1>
+        <div class="container">
+          <p class="announcement"></p>
+          <button id="sign-out" type="button">Sign Out</button>
+          <button id="new-game" type="button">Play a Game</button>
+        </div>
+      </div>
 
       <p id="message"></p>
       <h3 id="game-results"></h3>
-
       <!-- Sign Up Start -->
       <!-- <div id="sign-up-element">
         <h2 id="sign-up-header">Sign Up</h2>
@@ -49,8 +55,8 @@
           <label class="credentials">Confirm Password</label>
           <input name="credentials[password_confirmation]" type="password" class="form-control" placeholder="Confirm Password">
         </div>
-        <button type="submit" class="btn btn-primary mt-4">Sign Up</button>
-        <button id="#already-user" class="btn btn-primary mt-2">Already Signed Up?</button>
+        <button type="submit" class="btn-primary">Sign Up</button>
+        <button id="already-user" type="button" class="btn-primary">Already Signed Up?</button>
       </form>
       <!-- Sign Up End -->
 
@@ -65,15 +71,13 @@
           <label class="credentials">Password</label>
           <input name="credentials[password]" type="password" class="form-control" placeholder="Password">
         </div>
-        <button type="submit" class="btn btn-primary">Sign In</button>
+        <button type="submit" class="btn-primary">Sign In</button>
+        <button id="not-user" type="button" class="btn-primary">Not Signed Up?</button>
       </form>
 
       <!-- Sign In End -->
 
-      <div class="wrapper">
-      <button id="sign-out" type="button">Sign Out</button>
-      <button id="new-game" type="button">Play a Game</button>
-      </div>
+
       <!-- Start Game Board-->
       <table id="game-board">
         <tr class="game-board">

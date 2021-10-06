@@ -11,7 +11,9 @@ const onSignUpFailure = function () {
   $('#sign-up').trigger('reset') // clears fields after sign up
 }
 const onSignInSuccess = function (response) {
-  $('#message').text(`Glad to see ya ${response.user.email}!`)
+  $('.announcement').text(`Glad to see ya ${response.user.email}!`)
+  // $('#message').hide()
+  $('.container').show()
   store.token = response.user.token
   $('#sign-in').trigger('reset') // clears fields after sign in
   $('#sign-in').hide()
@@ -23,11 +25,12 @@ const onSignInFailure = function () {
   $('#sign-in').trigger('reset') // clears fields after sign up
 }
 const onSignOutSuccess = function (response) {
-  $('#message').text('Successfully Signed Out!')
+  $('.announcement').text('Successfully Signed Out!')
   $('#game-board').hide()
   $('#sign-in').show()
   $('#new-game').hide()
   $('#sign-out').hide()
+  $('.container').hide()
 }
 const onSignOutFailure = function () {
   $('#message').text('Failed to Sign Out')
@@ -45,10 +48,10 @@ const onGameUpdateSuccess = function (response) {
   store.game = response.game
   if (store.game.over) {
     if (store.winner === '') {
-      $('#game-results').text('Its a tie!')
+      $('.announcement').text('Its a tie!')
       return
     }
-    $('#game-results').text(`congrats ${store.winner}, you win!`)
+    $('.announcement').text(`${store.winner} wins! Thanks for playing.`)
   }
 }
 const onGameUpdateFailure = function () {

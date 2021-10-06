@@ -32,28 +32,28 @@ const onSignOut = function () {
 const alreadyUser = function () {
   $('#sign-up').hide()
   $('#sign-in').show()
-  $('#message').text('Glad to see ya again!')
+  $('#message').text('')
 }
 const notUser = function () {
-  $('#sign-in-element').hide()
-  $('#sign-up-element').show()
-  $('#message').text('Lets get ya signed up!')
+  $('#sign-in').hide()
+  $('#sign-up').show()
+  $('#message').text('')
 }
 const onCreateGame = function () {
   $('#game-board').show()
   $('#new-game').hide()
   $('.even').text('')
   $('.odd').text('')
-  $('#message').text("It's x's Turn!")
+  $('.announcement').text("It's X's Turn!")
   console.log('game cells: ', store.game)
   $('#game-results').text('')
-  currentPlayer = 'x'
+  currentPlayer = 'X'
   api.createGame()
     .then(ui.onCreateGameSuccess)
     .catch(ui.onCreateGameFailure)
 }
 // variable to keep track of who the current player is
-let currentPlayer = 'x'
+let currentPlayer = 'X'
 
 const gameMove = function (event) {
   event.preventDefault()
@@ -86,13 +86,12 @@ const gameMove = function (event) {
     }
     console.log('game data ', gameData)
     // player between x and o on each move
-    currentPlayer = currentPlayer === 'o' ? 'x' : 'o'
-    $('#message').text(`Its ${currentPlayer}'s Turn!`)
+    currentPlayer = currentPlayer === 'O' ? 'X' : 'O'
+    $('.announcement').text(`${currentPlayer}'s Turn!`)
 
     if (gameOver) {
       $('#new-game').show()
       $('#new-game').text('Play Again?')
-      $('#message').text('Thanks for playing!')
     }
 
     // api call for update
@@ -116,53 +115,53 @@ const checkWin = function () {
   const eight = cell[7]
   const nine = cell[8]
 
-  if (one === 'x' && two === 'x' && three === 'x') {
-    store.winner = 'x'
+  if (one === 'X' && two === 'X' && three === 'X') {
+    store.winner = 'X'
     return true
-  } else if (four === 'x' && five === 'x' && six === 'x') {
-    store.winner = 'x'
+  } else if (four === 'X' && five === 'X' && six === 'X') {
+    store.winner = 'X'
     return true
-  } else if (seven === 'x' && eight === 'x' && nine === 'x') {
-    store.winner = 'x'
+  } else if (seven === 'X' && eight === 'X' && nine === 'X') {
+    store.winner = 'X'
     return true
-  } else if (one === 'x' && four === 'x' && seven === 'x') {
-    store.winner = 'x'
+  } else if (one === 'X' && four === 'X' && seven === 'X') {
+    store.winner = 'X'
     return true
-  } else if (two === 'x' && five === 'x' && eight === 'x') {
-    store.winner = 'x'
+  } else if (two === 'X' && five === 'X' && eight === 'X') {
+    store.winner = 'X'
     return true
-  } else if (three === 'x' && six === 'x' && nine === 'x') {
-    store.winner = 'x'
+  } else if (three === 'X' && six === 'X' && nine === 'X') {
+    store.winner = 'X'
     return true
-  } else if (one === 'x' && five === 'x' && nine === 'x') {
-    store.winner = 'x'
+  } else if (one === 'X' && five === 'X' && nine === 'X') {
+    store.winner = 'X'
     return true
-  } else if (three === 'x' && five === 'x' && seven === 'x') {
-    store.winner = 'x'
+  } else if (three === 'X' && five === 'X' && seven === 'X') {
+    store.winner = 'X'
     return true
-  } else if (one === 'o' && two === 'o' && three === 'o') {
-    store.winner = 'o'
+  } else if (one === 'O' && two === 'O' && three === 'O') {
+    store.winner = 'O'
     return true
-  } else if (four === 'o' && five === 'o' && six === 'o') {
-    store.winner = 'o'
+  } else if (four === 'O' && five === 'O' && six === 'O') {
+    store.winner = 'O'
     return true
-  } else if (seven === 'o' && eight === 'o' && nine === 'o') {
-    store.winner = 'o'
+  } else if (seven === 'O' && eight === 'O' && nine === 'O') {
+    store.winner = 'O'
     return true
-  } else if (one === 'o' && four === 'o' && seven === 'o') {
-    store.winner = 'o'
+  } else if (one === 'O' && four === 'O' && seven === 'O') {
+    store.winner = 'O'
     return true
-  } else if (two === 'o' && five === 'o' && eight === 'o') {
-    store.winner = 'o'
+  } else if (two === 'O' && five === 'O' && eight === 'O') {
+    store.winner = 'O'
     return true
-  } else if (three === 'o' && six === 'o' && nine === 'o') {
-    store.winner = 'o'
+  } else if (three === 'O' && six === 'O' && nine === 'O') {
+    store.winner = 'O'
     return true
-  } else if (one === 'o' && five === 'o' && nine === 'o') {
-    store.winner = 'o'
+  } else if (one === 'O' && five === 'O' && nine === 'O') {
+    store.winner = 'O'
     return true
-  } else if (three === 'o' && five === 'o' && seven === 'o') {
-    store.winner = 'o'
+  } else if (three === 'O' && five === 'O' && seven === 'O') {
+    store.winner = 'O'
     return true
   } else if (one !== '' && two !== '' && three !== '' && four !== '' && five !== '' && six !== '' && seven !== '' && eight !== '' && nine !== '') {
     store.winner = ''

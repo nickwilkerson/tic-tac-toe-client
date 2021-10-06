@@ -18,5 +18,6 @@ $(() => {
   $('#sign-in').hide()
   $('#game-board').hide()
   $('#sign-out').hide()
+  $('.container').hide()
   $('.game-board').on('click', authEvents.gameMove)
 })
